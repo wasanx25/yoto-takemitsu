@@ -1,0 +1,8 @@
+StringLiterals:
+  EnforcedStyle: double_quotes
+
+AllCops:
+  Exclude:
+    - "README.md"
+    - "yoto-takemitsu.gemspec"
+    - "Gemfile"

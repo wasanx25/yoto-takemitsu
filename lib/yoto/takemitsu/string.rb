@@ -1,5 +1,6 @@
 module Yoto
   module Takemitsu
+    # core extension for String class
     module String
       ::String.class_eval do
         def delicate_byte_size
@@ -9,7 +10,7 @@ module Yoto
         end
 
         def reduce_emoji
-          self.each_char.select { |c| c.bytes.count < 4 }.join('')
+          self.each_char.select { |c| c.bytes.count < 4 }.join("")
         end
       end
     end
