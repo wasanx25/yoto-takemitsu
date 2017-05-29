@@ -1,3 +1,6 @@
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
 StringLiterals:
   EnforcedStyle: double_quotes
 
@@ -6,3 +9,7 @@ AllCops:
     - "README.md"
     - "yoto-takemitsu.gemspec"
     - "Gemfile"
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
