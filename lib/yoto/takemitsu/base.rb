@@ -1,5 +1,6 @@
 module Yoto
   module Takemitsu
+    # Hash in Array control
     class Base
       def initialize(obj)
         @obj = obj
@@ -14,17 +15,13 @@ module Yoto
       end
 
       def uniq_merge
-        if block_given?
-          yield(self)
-        else
-          raise "You should set keys and values."
-        end
+        yield(self) if block_given?
 
-        @obj.group_by { |i| @keys.map { |key| i[key] } }                
-            .map { |_k, v|                                              
+        @obj.group_by { |i| @keys.map { |key| i[key] } }
+            .map do |_k, v|
               v[1..-1].each { |x| @values.each { |y| v[0][y] += x[y] } }
-              v[0]                                                      
-            }                                                           
+              v[0]
+            end
       end
     end
   end
