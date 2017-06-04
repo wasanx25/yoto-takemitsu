@@ -39,9 +39,9 @@ describe "Yoto::Takemitsu::Base" do
       ]
       expected = "We Are The Best Friends."
       result = Yoto::Takemitsu::Base.new(object).original_sort do |o|
-        o.keys :name
+        o.key :name
         o.order :morita, :akashi, :suzuki, :fukawa, :tanaka
-        o.values :message
+        o.value :message
       end
       expect(result).to eq(expected)
     end
