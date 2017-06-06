@@ -20,9 +20,9 @@ describe "Yoto::Takemitsu::Base" do
         { name: "fukawa", money: 9000, count: 1 },
         { name: "akashi", money: 1000, count: 1 },
       ]
-      result = Yoto::Takemitsu::Base.new(object).uniq_merge do |o|
-        o.keys :name
-        o.values :money, :count
+      result = Yoto::Takemitsu::Base.new(object).uniq_merge do
+        keys :name
+        values :money, :count
       end
       expect(result).to eq(expected)
     end
@@ -38,10 +38,10 @@ describe "Yoto::Takemitsu::Base" do
         { name: "tanaka", message: "Friends." },
       ]
       expected = "We Are The Best Friends."
-      result = Yoto::Takemitsu::Base.new(object).original_sort do |o|
-        o.key :name
-        o.order :morita, :akashi, :suzuki, :fukawa, :tanaka
-        o.value :message
+      result = Yoto::Takemitsu::Base.new(object).original_sort do
+        key :name
+        order :morita, :akashi, :suzuki, :fukawa, :tanaka
+        value :message
       end
       expect(result).to eq(expected)
     end
