@@ -30,7 +30,7 @@ module Yoto
         def keys(*key);     @keys   = key; end
         def value(value);   @value  = value; end
         def values(*value); @values = value; end
-        def order(*order);  @orders = order; end
+        def order(*order);  @order  = order; end
     end
   end
 end
