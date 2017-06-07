@@ -10,9 +10,9 @@ module Yoto
         self.instance_eval &block if block_given?
 
         @obj.group_by { |obj| @keys.map { |k| obj[k] } }
-            .map do |_k, v|
-              v[1..-1].each { |x| @values.each { |y| v[0][y] += x[y] } }
-              v[0]
+            .map do |_k, val|
+              val[1..-1].each { |data| @values.each { |v| val[0][v] += data[v] } }
+              val[0]
             end
       end
 
