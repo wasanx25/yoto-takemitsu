@@ -19,8 +19,8 @@ module Yoto
       def original_sort(&block)
         self.instance_eval &block if block_given?
 
-        @order.each_with_object("") do |name, result|
-          result << @obj.find { |obj| obj[@key] == name.to_s }[@value]
+        @order.each_with_object([]) do |name, result|
+          result << @obj.find { |obj| obj[@key] == name.to_s }
         end
       end
 

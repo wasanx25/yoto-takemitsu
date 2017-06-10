@@ -37,7 +37,13 @@ describe "Yoto::Takemitsu::Base" do
         { name: "suzuki", message: "The " },
         { name: "tanaka", message: "Friends." },
       ]
-      expected = "We Are The Best Friends."
+      expected = [
+        { name: "morita", message: "We " },
+        { name: "akashi", message: "Are " },
+        { name: "suzuki", message: "The " },
+        { name: "fukawa", message: "Best " },
+        { name: "tanaka", message: "Friends." },
+      ]
       result = Yoto::Takemitsu::Base.new(object).original_sort do
         key :name
         order :morita, :akashi, :suzuki, :fukawa, :tanaka
