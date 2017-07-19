@@ -24,6 +24,14 @@ module Yoto
         end
       end
 
+      def get_by_original_sort(&block)
+        self.instance_eval &block if block_given?
+        
+        original_sort.each_with_object("") do |obj, result|
+          result << obj[@value]
+        end
+      end
+
       private
 
         def key(key);       @key    = key; end

@@ -29,7 +29,7 @@ describe "Yoto::Takemitsu::Base" do
   end
 
   describe "original_sort" do
-    it "should get string based on decided order" do
+    it "should get decided sorted object" do
       object = [
         { name: "akashi", message: "Are " },
         { name: "fukawa", message: "Best " },
@@ -47,6 +47,25 @@ describe "Yoto::Takemitsu::Base" do
       result = Yoto::Takemitsu::Base.new(object).original_sort do
         key :name
         order :morita, :akashi, :suzuki, :fukawa, :tanaka
+      end
+      expect(result).to eq(expected)
+    end
+  end
+
+  describe "get_by_original_sort" do
+    it "should get string based on decided order" do
+      object = [
+        { name: "akashi", message: "Are " },
+        { name: "fukawa", message: "Best " },
+        { name: "morita", message: "We " },
+        { name: "suzuki", message: "The " },
+        { name: "tanaka", message: "Friends." },
+      ]
+      expected = "We Are The Best Friends."
+      result = Yoto::Takemitsu::Base.new(object).get_by_original_sort do
+        key :name
+        order :morita, :akashi, :suzuki, :fukawa, :tanaka
+        value :message
       end
       expect(result).to eq(expected)
     end
