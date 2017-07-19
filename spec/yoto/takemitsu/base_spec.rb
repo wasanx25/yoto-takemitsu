@@ -47,7 +47,6 @@ describe "Yoto::Takemitsu::Base" do
       result = Yoto::Takemitsu::Base.new(object).original_sort do
         key :name
         order :morita, :akashi, :suzuki, :fukawa, :tanaka
-        value :message
       end
       expect(result).to eq(expected)
     end
