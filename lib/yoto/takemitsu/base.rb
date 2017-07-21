@@ -54,7 +54,7 @@ module Yoto
           if no_set_variables.empty? || no_set_variables.nil?
             nil
           else
-            "you should set " + no_set_variables.join(", ")
+            "you should set " + no_set_variables.join(" and ")
           end
         end
 
