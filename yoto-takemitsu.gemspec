@@ -6,12 +6,12 @@ require 'yoto/takemitsu/version'
 Gem::Specification.new do |spec|
   spec.name          = "yoto-takemitsu"
   spec.version       = Yoto::Takemitsu::VERSION
-  spec.authors       = ["wataru0225"]
+  spec.authors       = ["wasanx25"]
   spec.email         = ["wataru.kikuchi0225@gmail.com"]
 
   spec.summary       = %q{妖刀竹光}
   spec.description   = %q{for comfortable}
-  spec.homepage      = "https://github.com/wataru0225"
+  spec.homepage      = "https://github.com/wasanx25"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

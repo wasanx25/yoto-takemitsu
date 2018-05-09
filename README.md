@@ -9,7 +9,7 @@ Let's use this!
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'yoto-takemitsu', github: 'wataru0225/yoto-takemitsu'
+gem 'yoto-takemitsu', github: 'wasanx25/yoto-takemitsu'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ git clone git://github.com/wataru0225/yoto-takemitsu.git 
+    $ git clone git://github.com/wasanx25/yoto-takemitsu.git
     $ cd yoto-takemitsu
     $ gem build yoto-takemitsu.gemspec
 
